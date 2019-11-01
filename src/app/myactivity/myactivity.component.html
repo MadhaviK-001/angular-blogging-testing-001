@@ -1,0 +1,106 @@
+<div class="main-body">
+	<!-- Start Main navbar -->
+
+	<!-- End Main navbar -->
+	<div class="container-box">
+		<div class="clearfix"></div>
+		<header id="main-header-wrapper">
+			<div class="container-slash">
+				<div class="row" id="header-wrapper">
+					<div class="col s12 m6 head-col">
+						<div class="section" id="blog-title">
+							<div class="widget Header" data-version="1" id="Header1">
+								<div id="header-inner">
+									<span class="toptitle">
+Group - 6 Blogger
+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</header>
+	</div>
+
+	<div class="mkcenter">
+		<div class="container container-box">
+			<div class="row">
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Liked Articles</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSourceLiks">
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+								</ng-container>
+								<mat-header-row *matHeaderRowDef="displayedLikeColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedLikeColumns;"></mat-row>
+							</mat-table>
+						</div>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+		<div class="container container-box">
+			<div class="row">
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Disliked Articles</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSourceDisliks">
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+								</ng-container>
+								<mat-header-row *matHeaderRowDef="displayedDislikeColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedDislikeColumns;"></mat-row>
+							</mat-table>
+						</div>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+
+
+
+		<div class="container container-box">
+			<div class="row">
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Comments</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSourceComments">
+								<ng-container matColumnDef="dtp">
+									<mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.dtp  | date: 'd/M/y'}}
+									</mat-cell>
+								</ng-container>
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.arti}} </mat-cell>
+								</ng-container>
+                <ng-container matColumnDef="com">
+									<mat-header-cell *matHeaderCellDef> My Comment </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.com}} </mat-cell>
+								</ng-container>
+                
+								<mat-header-row *matHeaderRowDef="displayedCommentColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedCommentColumns;"></mat-row>
+							</mat-table>
+						</div>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+
+
+	</div>
